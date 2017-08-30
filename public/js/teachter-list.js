@@ -11,7 +11,7 @@ define(['jquery','template','bootstrap'],function ($,template) {
         //绑定预览的点击事件
         $('.preview').click(function () {
             //通过后台借口获取数据
-            var tcId=$(this).closest('tr').attr('data-tcid');//找到离他最近的父元素
+            var tcId=$(this).closest('td').attr('data-tcid');//找到离他最近的父元素
             // console.log(tcId);
             $.ajax({
                type:'get',
@@ -29,6 +29,27 @@ define(['jquery','template','bootstrap'],function ($,template) {
                     $('#teacherModal').modal();
                 }
             })
+        });
+        $('.eod').click(function () {
+            var td=$(this).closest('td');
+            var tcId=td.attr('data-tcid');
+            var tcStatus=td.attr('data-status');
+            var that=this;
+            $.ajax({
+               type:'post',
+               url:'/api/teacher/handle',
+                data:{tc_id:tcId,tc_status:tcStatus},
+                dataType:'json',
+                success:function (data) {
+                    console.log(data);
+                    td.attr('data-status',data.result.tc_status);
+                    if(data.result.tc_status==0){
+                        $(that).html('注销');
+                    }else {
+                        $(that).html('启用');
+                    }
+                }
+            });
         });
         }
     });
