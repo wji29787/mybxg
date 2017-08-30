@@ -3,9 +3,8 @@ require.config({
     paths:{
        jquery:'jquery/jquery.min',
        cookie:'jquery-cookie/jquery.cookie',
-       common:'../js/common',
-       login:'../js/login'
-
-
+       template:'artTemplate/art-template',
+       login:'../js/login',
+       common:'../js/common'
     }
 });
