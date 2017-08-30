@@ -1,4 +1,6 @@
-define(['jquery','template','bootstrap'],function ($,template) {
+define(['jquery','template','util','bootstrap'],function ($,template,util) {
+    // var pathname=location.pathname;
+    util.setMenu(location.pathname);
     //请求后台借口获取列表数据
     $.ajax({
         type:'get',
