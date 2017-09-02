@@ -10,6 +10,7 @@ require.config({
        validate:'validate/jquery-validate.min',
        jqueryForm:'jquery-form/jquery.form',
        login:'../js/login',
+       settings:'../js/settings',
        common:'../js/common',
        util:'../js/util',
        teacheradd:'../js/teacher-add',
