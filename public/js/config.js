@@ -17,7 +17,8 @@ require.config({
        teacheradd:'../js/teacher-add',
        teacherlist:'../js/teacher-list',
        index:'../js/index',
-       region:'jquery-region/jquery.region'
+       region:'jquery-region/jquery.region',
+       ckeditor:'ckeditor/ckeditor'
     },
     shim :{
        bootstrap:{
@@ -31,6 +32,9 @@ require.config({
         },
         uploadify:{
            deps:['jquery']
+        },
+        ckeditor:{
+           exports:'CKEDITOR'
         }
     }
 });

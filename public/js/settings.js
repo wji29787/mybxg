@@ -1,4 +1,4 @@
-define(['jquery','template','util','datepicker','language','uploadify','region'],function ($,template,util) {
+define(['jquery','template','util','ckeditor','datepicker','language','uploadify','region'],function ($,template,util,CKEDITOR) {
      //设置导航菜单选中
      util.setMenu('/main/index');
 //     调用后台借口获取所有的信息
@@ -30,6 +30,18 @@ define(['jquery','template','util','datepicker','language','uploadify','region']
             $('#pcd').region({
                 url:'/public/assets/jquery-region/region.json'
             });
+        //处理富文本
+            CKEDITOR.replace('editor',{
+                toolbarGroups :[
+                { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+                { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+                { name: 'links' },
+                { name: 'insert' },
+                { name: 'forms' },
+                { name: 'tools' }
+
+            ]
+            })
         }
     });
 });
