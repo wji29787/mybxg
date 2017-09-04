@@ -1,8 +1,8 @@
-define(['jquery','template','cookie'], function ($,template) {
+define(['jquery','template','nprogress','cookie'], function ($,template,NProgress) {
+    //控制页面加载时的进度条
+    NProgress.start();
 
-    // NProgress.start();
-
-    // NProgress.done();
+    NProgress.done();
     //控制左侧导航菜单的折叠展开
     $('.navs ul').prev('a').on('click', function () {
         $(this).next().slideToggle();
