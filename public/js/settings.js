@@ -1,4 +1,4 @@
-define(['jquery','template','util','datepicker','language','uploadify'],function ($,template,util) {
+define(['jquery','template','util','datepicker','language','uploadify','region'],function ($,template,util) {
      //设置导航菜单选中
      util.setMenu('/main/index');
 //     调用后台借口获取所有的信息
@@ -26,6 +26,10 @@ define(['jquery','template','util','datepicker','language','uploadify'],function
                     console.log(data.result.path);
                 }
             })
+        //    省市县三级联动
+            $('#pcd').region({
+                url:'/public/assets/jquery-region/region.json'
+            });
         }
     });
 });
